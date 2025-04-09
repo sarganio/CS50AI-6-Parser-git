@@ -92,5 +92,6 @@ def np_chunk(tree):
                 NPs.append(subtree)
     return NPs
 
+
 if __name__ == "__main__":
     main()
