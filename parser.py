@@ -88,6 +88,7 @@ def np_chunk(tree):
         if subtree.label() == "N":
             # Check if the subtree contains any other noun phrases
             if not any(s.label() == "N" for s in subtree.subtrees(lambda t: t != subtree)):
+                subtree.set_label("NP")
                 NPs.append(subtree)
     return NPs
 
