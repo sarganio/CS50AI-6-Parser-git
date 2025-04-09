@@ -62,7 +62,16 @@ def preprocess(sentence):
     and removing any word that does not contain at least one alphabetic
     character.
     """
-    raise NotImplementedError
+    # convert sentence to lowercase
+    sentence = sentence.lower()
+
+    nltk.download('punkt_tab')
+    words = nltk.tokenize.word_tokenize(sentence)
+    
+    # remove words that do not contain at least one alphabetic character
+    words = [word for word in words if word.isalpha()]
+    
+    return words
 
 
 def np_chunk(tree):
